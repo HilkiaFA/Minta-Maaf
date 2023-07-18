@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>minta maaf sama Faolin</title>
+  </head>
+  <body>
+    <div class="card bg-love">
+      <img id="thumb" src="image2.jpg" alt="thumb" class="img-thumb" />
+      <h1 class="latin text-center">Faolin</h1>
+      <h2 class="text-center">maafkan saya</h2>
+      <div class="card-footer">
+        <div class="btn mau" onclick="mau()">Iya😟</div>
+        <div class="btn gak" onclick="gakmau(this)" onmouseover="gakmau(this)">Gak ☹️</div>
+      </div>
+      <div class="info text-center mt-16" id="info"></div>
+    </div>
+  </body>
+  <script>
+    var _info = document.getElementById("info");
+    function gakmau(element) {
+      element.style.position = "absolute";
+      element.style.left = `${Math.floor(Math.random() * 90)}%`;
+      element.style.top = `${Math.floor(Math.random() * 90)}%`;
+
+      _info.innerHTML = "Harus Mau Pokoknya.......";
+    }
+    function mau() {
+      _info.innerHTML = "Makasih faolin";
+      var phoneNumber = "+6282155244179";
+
+  // Pesan yang ingin Anda kirim
+  var message = "oke aku maafin.";
+
+  // Membangun URL dengan nomor telepon dan pesan
+  var url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+
+  // Membuka URL di tab atau jendela baru
+  window.open(url);
+    }
+  </script>
+</html>
